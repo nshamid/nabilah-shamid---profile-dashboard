@@ -387,4 +387,140 @@ elif page == "Certificates":
 
 elif page == "Projects":
     st.title("🚀 Projects")
-    st.info("This section will be added next.")
+    st.caption("Selected technical and non-technical projects")
+
+    tab1, tab2, tab3 = st.tabs(
+        ["⭐ Best Project", "💻 Technical Projects", "🌱 Non-Tech Projects"]
+    )
+
+    # =========================
+    # TAB 1 — BEST PROJECT
+    # =========================
+    with tab1:
+        st.subheader("CareerPath — Personalized Career & Learning Recommendation System")
+
+        st.markdown("""
+        **Role:** Machine Learning Engineer  
+        **Program:** Capstone Project SISTECH
+        """)
+
+        st.markdown("""
+        CareerPath is a personalized career and learning recommendation system designed to help users 
+        discover suitable career paths, explore customized learning roadmaps, and find relevant courses 
+        or certifications. The system analyzes user interests, skills, and background to generate 
+        data-driven recommendations that support informed career decision-making.
+
+        As a **Machine Learning Engineer**, I was responsible for designing and developing the recommendation 
+        model, including data preprocessing, model selection, and integration into the system.
+        """)
+
+        st.markdown("**Key Highlights:**")
+        st.markdown("""
+        - Personalized career recommendations based on user data  
+        - Integrated learning roadmap and course recommendations  
+        - Application of machine learning for decision support  
+        """)
+
+        careerpath_link = "https://your-careerpath-website-link.com"
+
+        if careerpath_link:
+            st.markdown(
+                f"🔗 [Visit Project Website]({careerpath_link})",
+                unsafe_allow_html=True
+            )
+
+    # =========================
+    # TAB 2 — TECHNICAL PROJECTS
+    # =========================
+    with tab2:
+        st.subheader("Technical Projects")
+
+        technical_projects = [
+            {
+                "title": "Workshop Participant Survey Dashboard — Hacktiv8",
+                "tools": "Looker Studio",
+                "description": (
+                    "A data visualization dashboard presenting survey results from Hacktiv8 workshop participants. "
+                    "The dashboard helps organizers evaluate participant satisfaction, material effectiveness, "
+                    "and overall workshop quality to support data-driven decision making."
+                ),
+                "link": ""
+            },
+            {
+                "title": "Decision Support System — Game Recommendation Using GADA Method",
+                "tools": "Streamlit, Decision Support System",
+                "description": (
+                    "A group project for the Decision Support System course to determine the best game based on "
+                    "multiple criteria using the GADA method. The system provides structured and objective evaluation "
+                    "through an interactive Streamlit dashboard."
+                ),
+                "link": "https://your-streamlit-dashboard-link.com"
+            },
+            {
+                "title": "GPA Prediction Based on Student Lifestyle",
+                "tools": "Machine Learning, Streamlit",
+                "description": (
+                    "A machine learning group project that predicts students' GPA based on lifestyle factors such as "
+                    "study habits, stress levels, and daily activities."
+                ),
+                "link": "https://your-gpa-dashboard-link.com"
+            },
+            {
+                "title": "Credit Risk Prediction Model",
+                "tools": "Data Science, Machine Learning",
+                "description": (
+                    "Developed a machine learning model to predict credit risk based on loan data during the "
+                    "Project-Based Internship program at ID/X Partners."
+                ),
+                "link": ""
+            }
+        ]
+
+        for proj in technical_projects:
+            with st.expander(f"📌 {proj['title']}"):
+                st.markdown(f"**Tools / Field:** {proj['tools']}")
+                st.markdown(proj['description'])
+
+                if proj.get("link"):
+                    st.markdown(
+                        f"🔗 [View Project]({proj['link']})",
+                        unsafe_allow_html=True
+                    )
+
+    # =========================
+    # TAB 3 — NON-TECH PROJECTS
+    # =========================
+    with tab3:
+        st.subheader("Non-Technical Projects & Experiences")
+
+        nontech_projects = [
+            {
+                "title": "Community Empowerment Project — Bakti BCA",
+                "description": (
+                    "Participated in a community empowerment program focused on social contribution and capacity building."
+                )
+            },
+            {
+                "title": "Ilkoms Level Up Workshop",
+                "description": (
+                    "Involved in organizing and conducting the Ilkoms Level Up workshop for Fasilkom UNSRI students."
+                )
+            },
+            {
+                "title": "Wong Developer Webinars",
+                "description": (
+                    "Contributed to the organization of several Wong Developer webinars open to the public."
+                )
+            },
+            {
+                "title": "Master of Ceremony (MC) Experience",
+                "description": (
+                    "Served as MC for various events including public lectures, technology events, and open recruitment."
+                )
+            }
+        ]
+
+        for proj in nontech_projects:
+            with st.expander(f"🎯 {proj['title']}"):
+                st.markdown(proj['description'])
+
