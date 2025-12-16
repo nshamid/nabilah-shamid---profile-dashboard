@@ -357,7 +357,7 @@ elif page == "Certificates":
                 "event": "Sinergi Festival",
                 "date": "December",
                 "description": "Awarded 3rd place in the Creative Business Challenge category.",
-                "link File": "https://drive.google.com/drive/folders/12CN2T8tWvljNOq8ptkZd_uKsoScneavJ?usp=sharing"
+                "link file": "https://drive.google.com/drive/folders/12CN2T8tWvljNOq8ptkZd_uKsoScneavJ?usp=sharing"
             },
             {
                 "title": "Machine Learning Operations Portfolio Program Mentee",
