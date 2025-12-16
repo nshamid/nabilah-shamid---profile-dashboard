@@ -421,7 +421,7 @@ elif page == "Projects":
         - Application of machine learning for decision support  
         """)
 
-        careerpath_link = "https://your-careerpath-website-link.com"
+        careerpath_link = "https://career-path-sistech.vercel.app/"
 
         if careerpath_link:
             st.markdown(
@@ -444,7 +444,7 @@ elif page == "Projects":
                     "The dashboard helps organizers evaluate participant satisfaction, material effectiveness, "
                     "and overall workshop quality to support data-driven decision making."
                 ),
-                "link": ""
+                "link": "https://lookerstudio.google.com/s/piiLjqq0zcg"
             },
             {
                 "title": "Decision Support System — Game Recommendation Using GADA Method",
@@ -454,7 +454,7 @@ elif page == "Projects":
                     "multiple criteria using the GADA method. The system provides structured and objective evaluation "
                     "through an interactive Streamlit dashboard."
                 ),
-                "link": "https://your-streamlit-dashboard-link.com"
+                "link": "https://gada-spk-kelompok5.streamlit.app/"
             },
             {
                 "title": "GPA Prediction Based on Student Lifestyle",
@@ -463,7 +463,7 @@ elif page == "Projects":
                     "A machine learning group project that predicts students' GPA based on lifestyle factors such as "
                     "study habits, stress levels, and daily activities."
                 ),
-                "link": "https://your-gpa-dashboard-link.com"
+                "link": "https://gpa-prediction-based-on-student-lifestyle.streamlit.app/"
             },
             {
                 "title": "Credit Risk Prediction Model",
@@ -472,7 +472,7 @@ elif page == "Projects":
                     "Developed a machine learning model to predict credit risk based on loan data during the "
                     "Project-Based Internship program at ID/X Partners."
                 ),
-                "link": ""
+                "link": "https://www.linkedin.com/in/nabilahshamid/details/projects/1754658916060/single-media-viewer/?profileId=ACoAAEE7ZBQBXg9_PAM-RsH34f2nivkaIELlq28"
             }
         ]
 
