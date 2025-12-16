@@ -199,36 +199,53 @@ elif page == "Certificates":
     ])
 
     # ==================================================
-    # TAB 1 : CERTIFICATION
+    # TAB 1 : CERTIFICATION (PROFESSIONAL)
     # ==================================================
     with tab1:
         st.subheader("Professional Certification")
 
-        with st.expander("🐍 PCEP™ – Certified Entry-Level Python Programmer (December)", expanded=False):
-            col1, col2 = st.columns([1, 4])
+        certifications = [
+            {
+                "title": "PCEP™ – Certified Entry-Level Python Programmer",
+                "provider": "Python Institute",
+                "issued": "December",
+                "score": "96%",
+                "credential": "PCEP-30-02",
+                "logo": "python.png",
+                "analysis": [
+                    ("Python and Programming Fundamentals", "100%"),
+                    ("Control Flow – Conditionals & Loops", "93%"),
+                    ("Data Collections (Lists, Tuples, Dictionaries, Strings)", "100%"),
+                    ("Functions and Exceptions", "93%")
+                ],
+                "link": "https://verify.openedg.org/?id=wHfH.pVSj.Boya"
+            }
+        ]
 
-            with col1:
-                st.image(
-                    "assets/logos/python.png",
-                    width=70
-                )
+        for cert in certifications:
+            with st.expander(f"🐍 {cert['title']}", expanded=False):
+                col1, col2 = st.columns([1, 4])
 
-            with col2:
-                st.markdown("**Issued by:** Python Institute")
-                st.markdown("**Score:** **96%**")
-                st.markdown("**Credential ID:** PCEP-30-02")
+                with col1:
+                    st.image(
+                        f"assets/logos/{cert['logo']}",
+                        width=70
+                    )
 
-                st.markdown("### 📊 Section Analysis")
-                st.write(
-                    """
-                    - **Python and Programming Fundamentals:** 100%  
-                    - **Control Flow (Conditionals & Loops):** 93%  
-                    - **Data Collections (Lists, Tuples, Dictionaries, Strings):** 100%  
-                    - **Functions and Exceptions:** 93%  
-                    """
-                )
+                with col2:
+                    st.markdown(f"**Issued by:** {cert['provider']}")
+                    st.markdown(f"**Issued:** {cert['issued']}")
+                    st.markdown(f"**Score:** **{cert['score']}**")
+                    st.markdown(f"**Credential ID:** {cert['credential']}")
 
-                st.markdown("🔗 *Certificate link will be provided (Drive / Official Page)*")
+                    st.markdown("### 📊 Section Analysis")
+                    for section, score in cert["analysis"]:
+                        st.write(f"- **{section}:** {score}")
+
+                    st.markdown(
+                        f"🔗 [View Certificate]({cert['link']})",
+                        unsafe_allow_html=True
+                    )
 
     # ==================================================
     # TAB 2 : CERTIFICATE COURSES
@@ -236,33 +253,97 @@ elif page == "Certificates":
     with tab2:
         st.subheader("Technical Courses & Learning Programs")
 
-        course_list = [
-            ("Python Essentials 1", "Cisco Networking Academy", "December", "cisco.png"),
-            ("Data Classification and Summarization Using IBM Granite", "IBM", "August", "ibm.png"),
-            ("Introduction to Microsoft Azure Cloud Services", "Microsoft", "February", "microsoft.png"),
-            ("Generative AI with Large Language Models", "DeepLearning.AI", "January", "deeplearningai.png"),
-            ("Generative AI: Introduction and Applications", "IBM", "January", "ibm.png"),
-            ("Introduction to Machine Learning on AWS", "Amazon Web Services (AWS)", "January", "aws.png"),
-            ("Science and Technology Track: Cloud, ML & Security Academy", "US-ASEAN STIC Program", "January", "asean.png"),
-            ("Build and Deploy ML Solutions on Vertex AI", "Google Cloud", "-", "googlecloud.png"),
-            ("Create ML Models with BigQuery ML", "Google Cloud", "-", "googlecloud.png"),
-            ("Explore Generative AI with Vertex AI Gemini API", "Google Cloud", "-", "googlecloud.png"),
+        courses = [
+            {
+                "title": "Python Essentials 1",
+                "provider": "Cisco Networking Academy",
+                "issued": "December",
+                "logo": "cisco.png",
+                "link": "https://www.credly.com/badges/cd59cd56-c381-4dde-b05e-673ba88283ef/linked_in_profile"
+            },
+            {
+                "title": "Data Classification and Summarization Using IBM Granite",
+                "provider": "IBM",
+                "issued": "August",
+                "logo": "ibm.png",
+                "link": "https://www.credly.com/badges/cda5b7fe-7f13-45fe-b020-02c65a19d603/linked_in_profile"
+            },
+            {
+                "title": "Introduction to Microsoft Azure Cloud Services",
+                "provider": "Microsoft",
+                "issued": "February",
+                "logo": "microsoft.png",
+                "link": "https://www.coursera.org/account/accomplishments/verify/UZ7QXTZDP4W2"
+            },
+            {
+                "title": "Generative AI with Large Language Models",
+                "provider": "DeepLearning.AI",
+                "issued": "January",
+                "logo": "deeplearningai.png",
+                "link": "https://www.coursera.org/account/accomplishments/verify/8TWZ43UN349R"
+            },
+            {
+                "title": "Generative AI: Introduction and Applications",
+                "provider": "IBM",
+                "issued": "January",
+                "logo": "ibm.png",
+                "link": "https://www.coursera.org/account/accomplishments/verify/XST8F3VNHKTG"
+            },
+            {
+                "title": "Introduction to Machine Learning on AWS",
+                "provider": "Amazon Web Services (AWS)",
+                "issued": "January",
+                "logo": "aws.png",
+                "link": "https://www.coursera.org/account/accomplishments/verify/9H0EE5828KNQ"
+            },
+            {
+                "title": "Science and Technology Track: Cloud, ML & Security Academy",
+                "provider": "US-ASEAN STIC Program",
+                "issued": "January",
+                "logo": "asean.png",
+                "link": "https://www.credly.com/badges/6d34dcaa-c486-4c77-840f-ccbae0759f92/linked_in_profile",
+                "link file" : "https://drive.google.com/file/d/1uC-jhoj2gf__KlOycjqJj6n953pzaM46/view?usp=sharing"
+            },
+            {
+                "title": "Build and Deploy Machine Learning Solutions on Vertex AI",
+                "provider": "Google Cloud",
+                "issued": "-",
+                "logo": "googlecloud.png",
+                "link": "hhttps://www.cloudskillsboost.google/public_profiles/6637f7ad-6cb5-46db-8449-d3916cbe98dc/badges/9773107"
+            },
+            {
+                "title": "Create ML Models with BigQuery ML",
+                "provider": "Google Cloud",
+                "issued": "-",
+                "logo": "googlecloud.png",
+                "link": "https://www.cloudskillsboost.google/public_profiles/6637f7ad-6cb5-46db-8449-d3916cbe98dc/badges/9834275"
+            },
+            {
+                "title": "Explore Generative AI with the Vertex AI Gemini API",
+                "provider": "Google Cloud",
+                "issued": "-",
+                "logo": "googlecloud.png",
+                "link": "https://www.cloudskillsboost.google/public_profiles/6637f7ad-6cb5-46db-8449-d3916cbe98dc/badges/9837793"
+            },
         ]
 
-        for title, provider, month, logo in course_list:
-            with st.expander(f"📘 {title}", expanded=False):
+        for course in courses:
+            with st.expander(f"📘 {course['title']}", expanded=False):
                 col1, col2 = st.columns([1, 4])
 
                 with col1:
                     st.image(
-                        f"assets/logos/{logo}",
+                        f"assets/logos/{course['logo']}",
                         width=60
                     )
 
                 with col2:
-                    st.markdown(f"**Provider:** {provider}")
-                    st.markdown(f"**Issued:** {month}")
-                    st.markdown("🔗 *Certificate link will be provided (Drive / Platform)*")
+                    st.markdown(f"**Provider:** {course['provider']}")
+                    st.markdown(f"**Issued:** {course['issued']}")
+                    st.markdown(
+                        f"🔗 [View Certificate]({course['link']})",
+                        unsafe_allow_html=True
+                    )
 
     # ==================================================
     # TAB 3 : ACHIEVEMENTS
@@ -270,32 +351,40 @@ elif page == "Certificates":
     with tab3:
         st.subheader("Achievements & Recognitions")
 
-        with st.expander("🥉 3rd Place – Creative Business Challenge (December)", expanded=False):
-            st.write(
-                """
-                **Event:** Sinergi Festival  
-                **Achievement:** 3rd Place Winner  
-                **Category:** Creative Business Challenge
-                """
-            )
+        achievements = [
+            {
+                "title": "3rd Place – Creative Business Challenge",
+                "event": "Sinergi Festival",
+                "date": "December",
+                "description": "Awarded 3rd place in the Creative Business Challenge category.",
+                "link File": "https://drive.google.com/drive/folders/12CN2T8tWvljNOq8ptkZd_uKsoScneavJ?usp=sharing"
+            },
+            {
+                "title": "Machine Learning Operations Portfolio Program Mentee",
+                "event": "RISTEK Sister In Tech 2025",
+                "date": "August",
+                "description": "Selected as a mentee focusing on Machine Learning Operations and portfolio development.",
+                "credential ID" : "R2025-8897-5977",
+                "link": "https://verify.ristek.cs.ui.ac.id/"
+            },
+            {
+                "title": "Data Science Project-Based Internship Program",
+                "event": "ID/X Partners",
+                "date": "July",
+                "description": "Completed a project-based virtual internship as a Data Scientist.",
+                "link file": "https://drive.google.com/file/d/1CXlm9O8ghh3Rh6OFbngtmhfMGETDcaJL/view?usp=sharing"
+            }
+        ]
 
-        with st.expander("🤖 Machine Learning Operations Portfolio Program Mentee (August)", expanded=False):
-            st.write(
-                """
-                **Program:** RISTEK Sister In Tech 2025  
-                **Role:** Mentee  
-                **Focus:** Machine Learning Operations & Portfolio Development
-                """
-            )
-
-        with st.expander("📊 Data Science Project-Based Internship Program (July)", expanded=False):
-            st.write(
-                """
-                **Program:** ID/X Partners  
-                **Role:** Data Scientist Intern  
-                **Type:** Project-Based Virtual Internship
-                """
-            )
+        for ach in achievements:
+            with st.expander(f"🏆 {ach['title']}", expanded=False):
+                st.markdown(f"**Event / Program:** {ach['event']}")
+                st.markdown(f"**Date:** {ach['date']}")
+                st.write(ach["description"])
+                st.markdown(
+                    f"🔗 [View Details]({ach['link']})",
+                    unsafe_allow_html=True
+                )
 
 
 elif page == "Projects":
