@@ -2,49 +2,51 @@ import streamlit as st
 
 # ---------------- PAGE CONFIG ----------------
 st.set_page_config(
-    page_title="Portfolio | About Me",
+    page_title="Portfolio Dashboard",
     page_icon="👩‍💻",
     layout="wide"
 )
 
-# ---------------- SIDEBAR ----------------
+# ---------------- SIDEBAR NAVIGATION ----------------
 with st.sidebar:
     st.title("📁 Portfolio")
     st.caption("Interactive Portfolio Dashboard")
 
     st.divider()
 
-    st.markdown("### 👤 Navigation")
-    st.markdown("- About Me")
-    st.markdown("- Certificates & Achievements")
-    st.markdown("- Projects")
+    page = st.radio(
+        "Navigation",
+        ["About Me", "Certificates", "Projects"]
+    )
 
     st.divider()
 
     st.markdown("**Field of Interest**")
-    st.write("Data Science")
-    st.write("Machine Learning")
-    st.write("Artificial Intelligence")
+    st.write("• Data Science")
+    st.write("• Machine Learning")
+    st.write("• Artificial Intelligence")
 
-# ---------------- MAIN CONTENT ----------------
-st.title("👩‍💻 About Me")
-st.caption("Profile Overview & Personal Background")
+# ==================================================
+# ================= ABOUT ME PAGE ==================
+# ==================================================
+if page == "About Me":
 
-st.divider()
+    st.title("👩‍💻 About Me")
+    st.caption("Personal Background & Profile Overview")
+    st.divider()
 
-# ---------------- TABS ----------------
-tab1, tab2, tab3, tab4 = st.tabs([
-    "🧾 Background",
-    "🔗 Social Media",
-    "🏢 Organization & Experience",
-    "🛠️ What Can I Do"
-])
+    # ---------- PROFILE SECTION (PHOTO + DESCRIPTION) ----------
+    col1, col2 = st.columns([1, 2])
 
-# ---------------- TAB 1 : BACKGROUND ----------------
-with tab1:
-    with st.container():
+    with col1:
+        st.image(
+            "assets/images/profile.jpg",
+            caption="Informatics Engineering Student",
+            use_container_width=True
+        )
+
+    with col2:
         st.subheader("Profile Summary")
-
         st.write(
             """
             I am an **Informatics Engineering Student** with a strong passion for technology,
@@ -68,38 +70,52 @@ with tab1:
             """
         )
 
-# ---------------- TAB 2 : SOCIAL MEDIA ----------------
-with tab2:
-    st.subheader("Connect With Me")
+    st.divider()
 
-    col1, col2, col3 = st.columns(3)
+    # ---------------- TABS ----------------
+    tab1, tab2, tab3, tab4 = st.tabs([
+        "🧾 Background",
+        "🔗 Social Media",
+        "🏢 Organization & Experience",
+        "🛠️ What Can I Do"
+    ])
 
-    with col1:
-        st.markdown("### 📸 Instagram")
-        st.markdown(
-            "[Visit Instagram](https://www.instagram.com/nblhshamid_)",
-            unsafe_allow_html=True
+    # ---------------- TAB 1 : BACKGROUND ----------------
+    with tab1:
+        st.subheader("Background Overview")
+        st.write(
+            """
+            I am currently pursuing a degree in **Informatics Engineering**, focusing on
+            developing both **technical expertise** and **soft skills** to prepare for a
+            professional career in the technology industry.
+
+            My academic journey and extracurricular involvement have shaped my interest
+            in data-driven problem solving and intelligent systems.
+            """
         )
 
-    with col2:
-        st.markdown("### 💼 LinkedIn")
-        st.markdown(
-            "[Visit LinkedIn](https://www.linkedin.com/in/nabilahshamid)",
-            unsafe_allow_html=True
-        )
+    # ---------------- TAB 2 : SOCIAL MEDIA ----------------
+    with tab2:
+        st.subheader("Connect With Me")
 
-    with col3:
-        st.markdown("### 💻 GitHub")
-        st.markdown(
-            "[Visit GitHub](https://github.com/nshamid)",
-            unsafe_allow_html=True
-        )
+        col1, col2, col3 = st.columns(3)
 
-# ---------------- TAB 3 : ORGANIZATION & EXPERIENCE ----------------
-with tab3:
-    st.subheader("Organization & Professional Experience")
+        with col1:
+            st.markdown("### 📸 Instagram")
+            st.markdown("[Visit Instagram](https://www.instagram.com/yourusername)")
 
-    with st.container():
+        with col2:
+            st.markdown("### 💼 LinkedIn")
+            st.markdown("[Visit LinkedIn](https://www.linkedin.com/in/yourusername)")
+
+        with col3:
+            st.markdown("### 💻 GitHub")
+            st.markdown("[Visit GitHub](https://github.com/yourusername)")
+
+    # ---------------- TAB 3 : ORGANIZATION & EXPERIENCE ----------------
+    with tab3:
+        st.subheader("Organization & Experience")
+
         st.markdown("### 🏛️ BEM KM Fasilkom UNSRI")
         st.write(
             """
@@ -129,48 +145,55 @@ with tab3:
             """
         )
 
-# ---------------- TAB 4 : WHAT CAN I DO ----------------
-with tab4:
-    st.subheader("Capabilities & Skills")
+    # ---------------- TAB 4 : WHAT CAN I DO ----------------
+    with tab4:
+        st.subheader("Capabilities & Skills")
 
-    col1, col2 = st.columns(2)
+        col1, col2 = st.columns(2)
 
-    with col1:
-        st.markdown("### 🧠 Technical Skills")
+        with col1:
+            st.markdown("### 🧠 Technical Skills")
+            st.write(
+                """
+                - Data Analysis & Data Preparation  
+                - Machine Learning Model Development  
+                - Artificial Intelligence Fundamentals  
+                - Python Programming  
+                - SQL & Data Management  
+                - Dashboard & Data Visualization  
+                """
+            )
+
+        with col2:
+            st.markdown("### 🤝 Non-Technical Skills")
+            st.write(
+                """
+                - Public Speaking (MC & Presentation)  
+                - Communication & Public Relations  
+                - Leadership & Team Collaboration  
+                - Time Management & Responsibility  
+                - Adaptability & Continuous Learning  
+                """
+            )
+
+        st.markdown("### 🧰 Tools & Technologies")
         st.write(
             """
-            - Data Analysis & Data Preparation  
-            - Machine Learning Model Development  
-            - Artificial Intelligence Fundamentals  
-            - Python Programming  
-            - SQL & Data Management  
-            - Dashboard & Data Visualization  
+            - Python  
+            - Streamlit  
+            - Pandas, NumPy, Scikit-learn  
+            - Git & GitHub  
+            - Google Colab  
             """
         )
 
-    with col2:
-        st.markdown("### 🤝 Non-Technical Skills")
-        st.write(
-            """
-            - Public Speaking (MC & Presentation)  
-            - Communication & Public Relations  
-            - Leadership & Team Collaboration  
-            - Time Management & Responsibility  
-            - Adaptability & Fast Learning  
-            """
-        )
+# ==================================================
+# PLACEHOLDER PAGE (biar tidak error saat diklik)
+# ==================================================
+elif page == "Certificates":
+    st.title("📜 Certificates & Achievements")
+    st.info("This section will be added next.")
 
-    st.markdown("### 🧰 Tools & Technologies")
-    st.write(
-        """
-        - Python  
-        - Streamlit  
-        - Pandas, NumPy, Scikit-learn  
-        - Git & GitHub  
-        - Google Colab  
-        """
-    )
-
-# ---------------- FOOTER ----------------
-st.divider()
-st.caption("© 2025 | Interactive Portfolio Dashboard")
+elif page == "Projects":
+    st.title("🚀 Projects")
+    st.info("This section will be added next.")
