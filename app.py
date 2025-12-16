@@ -98,15 +98,15 @@ if page == "About Me":
 
         with col1:
             st.markdown("### 📸 Instagram")
-            st.markdown("[Visit Instagram](https://www.instagram.com/yourusername)")
+            st.markdown("[Visit Instagram](https://www.instagram.com/nblhshamid_)")
 
         with col2:
             st.markdown("### 💼 LinkedIn")
-            st.markdown("[Visit LinkedIn](https://www.linkedin.com/in/yourusername)")
+            st.markdown("[Visit LinkedIn](https://www.linkedin.com/in/nabilahshamid)")
 
         with col3:
             st.markdown("### 💻 GitHub")
-            st.markdown("[Visit GitHub](https://github.com/yourusername)")
+            st.markdown("[Visit GitHub](https://github.com/nshamid)")
 
     # ---------------- TAB 3 : ORGANIZATION & EXPERIENCE ----------------
     with tab3:
