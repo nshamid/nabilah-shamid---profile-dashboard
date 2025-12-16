@@ -21,10 +21,6 @@ with st.sidebar:
 
     st.divider()
 
-    st.markdown("**Field of Interest**")
-    st.write("• Data Science")
-    st.write("• Machine Learning")
-    st.write("• Artificial Intelligence")
 
 # ==================================================
 # ================= ABOUT ME PAGE ==================
@@ -41,7 +37,7 @@ if page == "About Me":
     with col1:
         st.image(
             "assets/images/profile.jpeg",
-            caption="Informatics Engineering Student",
+            caption="Nabilah Shamid",
             use_container_width=True
         )
 
