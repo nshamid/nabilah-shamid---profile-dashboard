@@ -40,7 +40,7 @@ if page == "About Me":
 
     with col1:
         st.image(
-            "assets/images/profile.jpg",
+            "assets/images/profile.jpeg",
             caption="Informatics Engineering Student",
             use_container_width=True
         )
