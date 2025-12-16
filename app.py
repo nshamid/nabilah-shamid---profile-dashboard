@@ -187,8 +187,116 @@ if page == "About Me":
 # PLACEHOLDER PAGE (biar tidak error saat diklik)
 # ==================================================
 elif page == "Certificates":
+
     st.title("📜 Certificates & Achievements")
-    st.info("This section will be added next.")
+    st.caption("Professional Certifications, Courses, and Recognitions")
+    st.divider()
+
+    tab1, tab2, tab3 = st.tabs([
+        "🏅 Certification",
+        "📚 Certificate Courses",
+        "🏆 Achievements"
+    ])
+
+    # ==================================================
+    # TAB 1 : CERTIFICATION
+    # ==================================================
+    with tab1:
+        st.subheader("Professional Certification")
+
+        with st.expander("🐍 PCEP™ – Certified Entry-Level Python Programmer (December)", expanded=False):
+            col1, col2 = st.columns([1, 4])
+
+            with col1:
+                st.image(
+                    "assets/images/logos/python.png",
+                    width=70
+                )
+
+            with col2:
+                st.markdown("**Issued by:** Python Institute")
+                st.markdown("**Score:** **96%**")
+                st.markdown("**Credential ID:** PCEP-30-02")
+
+                st.markdown("### 📊 Section Analysis")
+                st.write(
+                    """
+                    - **Python and Programming Fundamentals:** 100%  
+                    - **Control Flow (Conditionals & Loops):** 93%  
+                    - **Data Collections (Lists, Tuples, Dictionaries, Strings):** 100%  
+                    - **Functions and Exceptions:** 93%  
+                    """
+                )
+
+                st.markdown("🔗 *Certificate link will be provided (Drive / Official Page)*")
+
+    # ==================================================
+    # TAB 2 : CERTIFICATE COURSES
+    # ==================================================
+    with tab2:
+        st.subheader("Technical Courses & Learning Programs")
+
+        course_list = [
+            ("Python Essentials 1", "Cisco Networking Academy", "December", "cisco.png"),
+            ("Data Classification and Summarization Using IBM Granite", "IBM", "August", "ibm.png"),
+            ("Introduction to Microsoft Azure Cloud Services", "Microsoft", "February", "microsoft.png"),
+            ("Generative AI with Large Language Models", "DeepLearning.AI", "January", "deeplearningai.png"),
+            ("Generative AI: Introduction and Applications", "IBM", "January", "ibm.png"),
+            ("Introduction to Machine Learning on AWS", "Amazon Web Services (AWS)", "January", "aws.png"),
+            ("Science and Technology Track: Cloud, ML & Security Academy", "US-ASEAN STIC Program", "January", "asean.png"),
+            ("Build and Deploy ML Solutions on Vertex AI", "Google Cloud", "-", "googlecloud.png"),
+            ("Create ML Models with BigQuery ML", "Google Cloud", "-", "googlecloud.png"),
+            ("Explore Generative AI with Vertex AI Gemini API", "Google Cloud", "-", "googlecloud.png"),
+        ]
+
+        for title, provider, month, logo in course_list:
+            with st.expander(f"📘 {title}", expanded=False):
+                col1, col2 = st.columns([1, 4])
+
+                with col1:
+                    st.image(
+                        f"assets/images/logos/{logo}",
+                        width=60
+                    )
+
+                with col2:
+                    st.markdown(f"**Provider:** {provider}")
+                    st.markdown(f"**Issued:** {month}")
+                    st.markdown("🔗 *Certificate link will be provided (Drive / Platform)*")
+
+    # ==================================================
+    # TAB 3 : ACHIEVEMENTS
+    # ==================================================
+    with tab3:
+        st.subheader("Achievements & Recognitions")
+
+        with st.expander("🥉 3rd Place – Creative Business Challenge (December)", expanded=False):
+            st.write(
+                """
+                **Event:** Sinergi Festival  
+                **Achievement:** 3rd Place Winner  
+                **Category:** Creative Business Challenge
+                """
+            )
+
+        with st.expander("🤖 Machine Learning Operations Portfolio Program Mentee (August)", expanded=False):
+            st.write(
+                """
+                **Program:** RISTEK Sister In Tech 2025  
+                **Role:** Mentee  
+                **Focus:** Machine Learning Operations & Portfolio Development
+                """
+            )
+
+        with st.expander("📊 Data Science Project-Based Internship Program (July)", expanded=False):
+            st.write(
+                """
+                **Program:** ID/X Partners  
+                **Role:** Data Scientist Intern  
+                **Type:** Project-Based Virtual Internship
+                """
+            )
+
 
 elif page == "Projects":
     st.title("🚀 Projects")
