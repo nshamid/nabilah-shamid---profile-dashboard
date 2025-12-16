@@ -209,7 +209,7 @@ elif page == "Certificates":
 
             with col1:
                 st.image(
-                    "assets/images/logos/python.png",
+                    "assets/images/python.png",
                     width=70
                 )
 
@@ -255,7 +255,7 @@ elif page == "Certificates":
 
                 with col1:
                     st.image(
-                        f"assets/images/logos/{logo}",
+                        f"assets/logos/{logo}",
                         width=60
                     )
 
