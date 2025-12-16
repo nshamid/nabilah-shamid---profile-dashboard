@@ -209,7 +209,7 @@ elif page == "Certificates":
 
             with col1:
                 st.image(
-                    "assets/images/python.png",
+                    "assets/logos/python.png",
                     width=70
                 )
 
