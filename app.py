@@ -301,8 +301,7 @@ elif page == "Certificates":
                 "provider": "US-ASEAN STIC Program",
                 "issued": "January",
                 "logo": "asean.png",
-                "link": "https://www.credly.com/badges/6d34dcaa-c486-4c77-840f-ccbae0759f92/linked_in_profile",
-                "link file" : "https://drive.google.com/file/d/1uC-jhoj2gf__KlOycjqJj6n953pzaM46/view?usp=sharing"
+                "link" : "https://drive.google.com/file/d/1uC-jhoj2gf__KlOycjqJj6n953pzaM46/view?usp=sharing"
             },
             {
                 "title": "Build and Deploy Machine Learning Solutions on Vertex AI",
@@ -357,14 +356,13 @@ elif page == "Certificates":
                 "event": "Sinergi Festival",
                 "date": "December",
                 "description": "Awarded 3rd place in the Creative Business Challenge category.",
-                "link file": "https://drive.google.com/drive/folders/12CN2T8tWvljNOq8ptkZd_uKsoScneavJ?usp=sharing"
+                "link": "https://drive.google.com/drive/folders/12CN2T8tWvljNOq8ptkZd_uKsoScneavJ?usp=sharing"
             },
             {
                 "title": "Machine Learning Operations Portfolio Program Mentee",
                 "event": "RISTEK Sister In Tech 2025",
                 "date": "August",
                 "description": "Selected as a mentee focusing on Machine Learning Operations and portfolio development.",
-                "credential ID" : "R2025-8897-5977",
                 "link": "https://verify.ristek.cs.ui.ac.id/"
             },
             {
@@ -372,7 +370,7 @@ elif page == "Certificates":
                 "event": "ID/X Partners",
                 "date": "July",
                 "description": "Completed a project-based virtual internship as a Data Scientist.",
-                "link file": "https://drive.google.com/file/d/1CXlm9O8ghh3Rh6OFbngtmhfMGETDcaJL/view?usp=sharing"
+                "link": "https://drive.google.com/file/d/1CXlm9O8ghh3Rh6OFbngtmhfMGETDcaJL/view?usp=sharing"
             }
         ]
 
