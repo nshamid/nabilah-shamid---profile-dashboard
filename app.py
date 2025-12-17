@@ -20,6 +20,7 @@ with st.sidebar:
     )
 
     st.divider()
+    st.sidebar.caption("© 2025 - Nabilah Shamid")
 
 
 # ==================================================
